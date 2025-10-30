@@ -10,7 +10,8 @@ const config: Config = {
   baseUrl: '/hl-docs',
 
   organizationName: 'felipecsl', // GitHub org/user
-  projectName: 'hl',
+  projectName: 'hl-docs',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
