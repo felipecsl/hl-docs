@@ -1,0 +1,108 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "accessories",
+              "path": "/docs/accessories",
+              "sidebar": "docs"
+            },
+            {
+              "id": "commands/accessory-postgres",
+              "path": "/docs/commands/accessory-postgres",
+              "sidebar": "docs"
+            },
+            {
+              "id": "commands/accessory-redis",
+              "path": "/docs/commands/accessory-redis",
+              "sidebar": "docs"
+            },
+            {
+              "id": "commands/deploy",
+              "path": "/docs/commands/deploy",
+              "sidebar": "docs"
+            },
+            {
+              "id": "commands/env",
+              "path": "/docs/commands/env",
+              "sidebar": "docs"
+            },
+            {
+              "id": "commands/init",
+              "path": "/docs/commands/init",
+              "sidebar": "docs"
+            },
+            {
+              "id": "commands/overview",
+              "path": "/docs/commands/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "commands/rollback",
+              "path": "/docs/commands/rollback",
+              "sidebar": "docs"
+            },
+            {
+              "id": "commands/secrets",
+              "path": "/docs/commands/secrets",
+              "sidebar": "docs"
+            },
+            {
+              "id": "configuration",
+              "path": "/docs/configuration",
+              "sidebar": "docs"
+            },
+            {
+              "id": "faq",
+              "path": "/docs/faq",
+              "sidebar": "docs"
+            },
+            {
+              "id": "getting-started",
+              "path": "/docs/getting-started",
+              "sidebar": "docs"
+            },
+            {
+              "id": "health-checks",
+              "path": "/docs/health-checks",
+              "sidebar": "docs"
+            },
+            {
+              "id": "how-it-works",
+              "path": "/docs/how-it-works",
+              "sidebar": "docs"
+            },
+            {
+              "id": "intro",
+              "path": "/docs/intro",
+              "sidebar": "docs"
+            },
+            {
+              "id": "workflow",
+              "path": "/docs/workflow",
+              "sidebar": "docs"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "docs": {
+              "link": {
+                "path": "/docs/intro",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

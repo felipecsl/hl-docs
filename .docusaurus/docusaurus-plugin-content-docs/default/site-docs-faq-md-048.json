@@ -1,0 +1,19 @@
+{
+  "id": "faq",
+  "title": "FAQ",
+  "description": "Where does the build context come from?",
+  "source": "@site/docs/faq.md",
+  "sourceDirName": ".",
+  "slug": "/faq",
+  "permalink": "/docs/faq",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "hl accessory add redis",
+    "permalink": "/docs/commands/accessory-redis"
+  }
+}

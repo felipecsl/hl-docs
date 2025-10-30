@@ -1,0 +1,23 @@
+{
+  "id": "commands/rollback",
+  "title": "hl rollback",
+  "description": "Fast rollback by retagging :latest to a known good SHA, then restarting with health‑gate.",
+  "source": "@site/docs/commands/rollback.md",
+  "sourceDirName": "commands",
+  "slug": "/commands/rollback",
+  "permalink": "/docs/commands/rollback",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "hl deploy",
+    "permalink": "/docs/commands/deploy"
+  },
+  "next": {
+    "title": "hl secrets",
+    "permalink": "/docs/commands/secrets"
+  }
+}

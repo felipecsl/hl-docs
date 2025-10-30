@@ -1,0 +1,23 @@
+{
+  "id": "commands/init",
+  "title": "hl init",
+  "description": "Create per‑app runtime home, Compose file(s), hl.yml, and a systemd unit.",
+  "source": "@site/docs/commands/init.md",
+  "sourceDirName": "commands",
+  "slug": "/commands/init",
+  "permalink": "/docs/commands/init",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Command Overview",
+    "permalink": "/docs/commands/overview"
+  },
+  "next": {
+    "title": "hl deploy",
+    "permalink": "/docs/commands/deploy"
+  }
+}

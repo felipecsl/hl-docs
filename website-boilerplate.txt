@@ -1,0 +1,627 @@
+# Project: `hl` docs site (Docusaurus v3)
+
+Below is a ready-to-use boilerplate for a documentation website using **Docusaurus**. Copy this structure into a new repo (e.g., `hl-docs/`). Run `npm install && npm run start` to preview locally. Replace placeholder values (like domain) as needed.
+
+---
+
+## File tree
+
+```
+.
+├── package.json
+├── tsconfig.json
+├── docusaurus.config.ts
+├── sidebars.ts
+├── static/
+│   └── img/
+│       └── logo.svg
+├── src/
+│   └── css/
+│       └── custom.css
+│   └── pages/
+│       └── index.md
+└── docs/
+    ├── intro.md
+    ├── getting-started.md
+    ├── how-it-works.md
+    ├── configuration.md
+    ├── health-checks.md
+    ├── accessories.md
+    ├── workflow.md
+    ├── commands/
+    │   ├── overview.md
+    │   ├── init.md
+    │   ├── deploy.md
+    │   ├── rollback.md
+    │   ├── secrets.md
+    │   ├── env.md
+    │   ├── accessory-postgres.md
+    │   └── accessory-redis.md
+    └── faq.md
+```
+
+---
+
+## `package.json`
+
+```json
+{
+  "name": "hl-docs",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.5.2",
+    "@docusaurus/preset-classic": "^3.5.2",
+    "clsx": "^2.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.23",
+    "eslint": "^8.57.0",
+    "typescript": "^5.6.3"
+  }
+}
+```
+
+---
+
+## `tsconfig.json`
+
+```json
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "skipLibCheck": true,
+    "baseUrl": "."
+  },
+  "include": ["src", "docs", "docusaurus.config.ts", "sidebars.ts"]
+}
+```
+
+---
+
+## `docusaurus.config.ts`
+
+```ts
+import type {Config} from '@docusaurus/types';
+import {themes as prismThemes} from 'prism-react-renderer';
+
+const config: Config = {
+  title: 'hl',
+  tagline: 'Tiny, deterministic git-push deploys for a single host',
+  favicon: 'img/logo.svg',
+
+  url: 'https://example.com', // TODO: set your docs domain
+  baseUrl: '/',
+
+  organizationName: 'felipecsl', // GitHub org/user
+  projectName: 'hl',
+
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en']
+  },
+
+  presets: [
+    [
+      'classic',
+      {
+        docs: {
+          sidebarPath: require.resolve('./sidebars.ts')
+        },
+        blog: false,
+        theme: {
+          customCss: require.resolve('./src/css/custom.css')
+        }
+      }
+    ]
+  ],
+
+  themeConfig: {
+    image: 'img/logo.svg',
+    navbar: {
+      title: 'hl',
+      logo: {
+        alt: 'hl logo',
+        src: 'img/logo.svg'
+      },
+      items: [
+        {type: 'docSidebar', sidebarId: 'docs', position: 'left', label: 'Docs'},
+        {href: 'https://github.com/felipecsl/hl', label: 'GitHub', position: 'right'}
+      ]
+    },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {label: 'Getting Started', to: '/docs/getting-started'},
+            {label: 'Commands', to: '/docs/commands/overview'},
+            {label: 'FAQ', to: '/docs/faq'}
+          ]
+        },
+        {
+          title: 'Community',
+          items: [{label: 'GitHub', href: 'https://github.com/felipecsl/hl'}]
+        }
+      ],
+      copyright: `MIT Licensed — © ${new Date().getFullYear()} hl contributors`
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula
+    }
+  }
+};
+
+export default config;
+```
+
+---
+
+## `sidebars.ts`
+
+```ts
+import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+
+const sidebars: SidebarsConfig = {
+  docs: [
+    'intro',
+    'getting-started',
+    'how-it-works',
+    'configuration',
+    'health-checks',
+    'accessories',
+    'workflow',
+    {
+      type: 'category',
+      label: 'Commands',
+      collapsed: false,
+      items: [
+        'commands/overview',
+        'commands/init',
+        'commands/deploy',
+        'commands/rollback',
+        'commands/secrets',
+        'commands/env',
+        'commands/accessory-postgres',
+        'commands/accessory-redis'
+      ]
+    },
+    'faq'
+  ]
+};
+
+export default sidebars;
+```
+
+---
+
+## `src/css/custom.css`
+
+```css
+:root {
+  --ifm-color-primary: #0c7bdc;
+  --ifm-color-primary-dark: #0b6fc6;
+  --ifm-color-primary-darker: #0a65b4;
+  --ifm-color-primary-darkest: #085392;
+  --ifm-color-primary-light: #1a86e3;
+  --ifm-code-font-size: 95%;
+}
+
+.hero--primary {
+  background: linear-gradient(135deg, #0c7bdc 0%, #0a65b4 100%);
+}
+```
+
+---
+
+## `static/img/logo.svg`
+
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="16" fill="#0c7bdc"/>
+  <path d="M36 88V40h12v18h32V40h12v48H80V70H48v18z" fill="#fff"/>
+</svg>
+```
+
+---
+
+## `src/pages/index.md` (Landing page)
+
+```mdx
+---
+title: hl — tiny, deterministic git-push deploys
+hide_table_of_contents: true
+---
+
+import Link from '@docusaurus/Link';
+
+<div className="hero hero--primary">
+  <div className="container">
+    <h1 className="hero__title">hl</h1>
+    <p className="hero__subtitle">Tiny, deterministic “git‑push deploys” for a single host</p>
+    <div>
+      <Link className="button button--secondary button--lg" to="/docs/getting-started">
+        Get Started
+      </Link>
+      <Link className="button button--light button--lg" style={{marginLeft: '0.5rem'}} to="/docs/commands/overview">
+        Commands
+      </Link>
+    </div>
+  </div>
+</div>
+
+<section className="container" style={{paddingTop: '2rem', paddingBottom: '3rem'}}>
+  <div className="row">
+    <div className="col col--4">
+      <h3>Deterministic</h3>
+      <p>Deploy exactly the pushed commit — no working tree drift. Images are built from <code>git archive</code> of the SHA.</p>
+    </div>
+    <div className="col col--4">
+      <h3>Explicit</h3>
+      <p>No auto-updaters. <code>hl</code> performs restarts and gates on health, so you always know what’s running.</p>
+    </div>
+    <div className="col col--4">
+      <h3>Boring Primitives</h3>
+      <p>Git, Docker (Buildx), Traefik, Docker Compose, systemd. Easy to reason about, easy to recover.</p>
+    </div>
+  </div>
+</section>
+```
+
+---
+
+## `docs/intro.md`
+
+```md
+---
+sidebar_position: 1
+---
+
+# hl
+
+**hl** is a tiny, deterministic “git‑push deploys” CLI for single‑host deployments. Its goal is to keep deployments dead‑simple, explicit, and reliable — without adopting a full orchestrator.
+```
+
+---
+
+## `docs/getting-started.md`
+
+```md
+# Getting Started
+
+This guide shows a single‑host setup where a Git push to a bare repo on the server triggers a build and restart.
+
+## Requirements
+- Git reachable over SSH
+- Docker with Buildx
+- Traefik (reverse proxy) on the host
+- systemd available
+
+## Quickstart (server)
+```bash
+hl init \
+  --app recipes \
+  --image registry.example.com/recipes \
+  --domain recipes.example.com \
+  --port 8080
+```
+Creates the per‑app runtime home and a systemd unit.
+
+## Create the bare repo + hook (server)
+```
+/home/<user>/hl/git/recipes.git/hooks/post-receive
+```
+Hook runs:
+```bash
+hl deploy --app <app> --sha "$newrev" --branch "$branch"
+```
+
+## Push to deploy (from your laptop)
+```bash
+git remote add production ssh://<user>@<host>/home/<user>/hl/git/recipes.git
+git push production master
+```
+```
+
+---
+
+## `docs/how-it-works.md`
+
+```md
+# How It Works
+
+1. **Push** to a bare repo on the server.
+2. **Hook → hl deploy** passes `--sha` and `--branch`.
+3. **Export commit** via `git archive` to an ephemeral build context.
+4. **Build & push** Docker image tags: `:<shortsha>`, `:<branch>-<shortsha>`, `:latest`.
+5. **Optional migrations** run in a one‑off container with the new tag.
+6. **Retag & restart**: retag `:latest` to the new SHA and restart via systemd (Compose under the hood).
+7. **Health‑gate**: wait until the app is healthy.
+
+### Runtime layout (per app)
+```
+/home/<user>/hl/apps/<app>/
+  compose.yml
+  compose.<accessory>.yml
+  .env
+  hl.yml
+  pgdata/ ...
+systemd: app-<app>.service
+```
+```
+
+---
+
+## `docs/configuration.md`
+
+```md
+# Configuration (`hl.yml`)
+
+Server‑owned file at `/home/<user>/hl/apps/<app>/hl.yml`.
+
+```yaml
+app: recipes
+image: registry.example.com/recipes
+domain: recipes.example.com
+servicePort: 8080
+resolver: myresolver
+network: traefik_proxy
+platforms: linux/amd64
+
+health:
+  url: http://recipes:8080/healthz
+  interval: 2s
+  timeout: 45s
+
+migrations:
+  command: ["bin/rails", "db:migrate"]
+  env:
+    RAILS_ENV: "production"
+
+secrets:
+  - RAILS_MASTER_KEY
+  - SECRET_KEY_BASE
+```
+```
+
+---
+
+## `docs/health-checks.md`
+
+```md
+# Health Checks
+
+`hl` runs a short‑lived container on the app network to hit `http://<service>:<port><path>`.
+
+Optional Compose healthcheck:
+```yaml
+services:
+  recipes:
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/healthz >/dev/null 2>&1 || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+```
+```
+
+---
+
+## `docs/accessories.md`
+
+```md
+# Accessories
+
+Helpers to add services like Postgres/Redis using Compose fragments.
+
+## Postgres
+```bash
+hl accessory add recipes postgres --version 16
+```
+- Writes `compose.postgres.yml`
+- Adds `depends_on` with health
+- Updates `.env` with `POSTGRES_*` and `DATABASE_URL`
+- Patches systemd to run `-f compose.yml -f compose.postgres.yml`
+
+## Redis
+```bash
+hl accessory add recipes redis --version 7
+```
+- Writes `compose.redis.yml`
+- Sets `REDIS_URL=redis://redis:6379/0`
+```
+
+---
+
+## `docs/workflow.md`
+
+```md
+# Typical Workflow
+
+1) **Bootstrap**: `hl init ...`
+2) **Secrets/Env**: set runtime secrets in `.env` (server‑owned).
+3) **(Optional) Accessories**: Postgres/Redis.
+4) **Create bare repo + hook**.
+5) **Push to deploy**.
+6) **Rollback** if needed.
+```
+
+---
+
+## `docs/commands/overview.md`
+
+```md
+# Command Overview
+
+> Names/flags may differ depending on implementation maturity, but this is the intended surface.
+
+- `hl init --app <name> --image <ref> --domain <host> --port <num> [--network traefik_proxy] [--resolver myresolver]`
+- `hl deploy --app <name> --sha <sha> [--branch <name>]`
+- `hl rollback <app> <sha>`
+- `hl secrets set <app> KEY=VALUE [KEY=VALUE ...]`
+- `hl secrets ls <app>`
+- `hl accessory add <app> postgres [--version <v>] [--user <u>] [--db <name>] [--password <p>]`
+- `hl accessory add <app> redis [--version <v>]`
+- *(Optional / WIP)* `hl env set <app> KEY=VALUE`, `hl env ls <app>`
+```
+
+---
+
+## `docs/commands/init.md`
+
+```md
+# `hl init`
+
+Create per‑app runtime home, Compose file(s), `hl.yml`, and a systemd unit.
+
+## Usage
+```bash
+hl init \
+  --app <name> \
+  --image <registry/ref> \
+  --domain <host> \
+  --port <num> \
+  [--network traefik_proxy] \
+  [--resolver myresolver]
+```
+
+## Output
+- `/home/<user>/hl/apps/<app>/{compose.yml,.env,hl.yml}`
+- `app-<app>.service` (enabled)
+```
+
+---
+
+## `docs/commands/deploy.md`
+
+```md
+# `hl deploy`
+
+Export commit → build & push → migrations → retag → restart (systemd) → health‑gate.
+
+## Usage
+```bash
+hl deploy --app <name> --sha <sha> [--branch <name>]
+```
+```
+
+---
+
+## `docs/commands/rollback.md`
+
+```md
+# `hl rollback`
+
+Fast rollback by retagging `:latest` to a known good SHA, then restarting with health‑gate.
+
+## Usage
+```bash
+hl rollback <app> <sha>
+```
+```
+
+---
+
+## `docs/commands/secrets.md`
+
+```md
+# `hl secrets`
+
+Manage runtime secrets stored in the app’s `.env` on the server (mode 0600). Do not bake secrets into images.
+
+## Set
+```bash
+hl secrets set <app> KEY=VALUE [KEY=VALUE ...]
+```
+
+## List
+```bash
+hl secrets ls <app>
+```
+*Values are redacted in the listing.*
+```
+
+---
+
+## `docs/commands/env.md`
+
+```md
+# `hl env` (optional / WIP)
+
+Some setups distinguish build‑time vs runtime env. If enabled in your build, you may see:
+
+```bash
+hl env set [--build] <app> KEY=VALUE ...
+hl env ls <app>
+```
+
+> Note: In some versions, `secrets` covers most env usage; treat this section as forward‑looking.
+```
+
+---
+
+## `docs/commands/accessory-postgres.md`
+
+```md
+# `hl accessory add postgres`
+
+Adds a healthy Postgres service via `compose.postgres.yml` and wires `DATABASE_URL`.
+
+## Usage
+```bash
+hl accessory add <app> postgres [--version <v>] [--user <u>] [--db <name>] [--password <p>]
+```
+```
+
+---
+
+## `docs/commands/accessory-redis.md`
+
+```md
+# `hl accessory add redis`
+
+Adds a Redis service via `compose.redis.yml` and wires `REDIS_URL`.
+
+## Usage
+```bash
+hl accessory add <app> redis [--version <v>]
+```
+```
+
+---
+
+## `docs/faq.md`
+
+```md
+# FAQ
+
+**Where does the build context come from?**  
+From the **bare repo** you push to; `hl` uses `git archive` for the exact commit — no persistent working tree.
+
+**Why not Watchtower?**  
+Rollouts remain explicit and health‑gated in one place (the deploy command).
+
+**Can I pin a version?**  
+Yes. Use Docker image tags directly or `hl rollback <sha>` to retag `:latest`.
+
+**Can health checks use a public URL?**  
+Yes — set `health.mode: http` with an external URL, though Docker‑mode is preferred.
