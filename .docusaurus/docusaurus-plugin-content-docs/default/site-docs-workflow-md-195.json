@@ -5,7 +5,7 @@
   "source": "@site/docs/workflow.md",
   "sourceDirName": ".",
   "slug": "/workflow",
-  "permalink": "/docs/workflow",
+  "permalink": "/hl-docs/docs/workflow",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docs",
   "previous": {
     "title": "Accessories",
-    "permalink": "/docs/accessories"
+    "permalink": "/hl-docs/docs/accessories"
   },
   "next": {
     "title": "Command Overview",
-    "permalink": "/docs/commands/overview"
+    "permalink": "/hl-docs/docs/commands/overview"
   }
 }

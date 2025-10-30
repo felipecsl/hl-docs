@@ -5,7 +5,7 @@
   "source": "@site/docs/health-checks.md",
   "sourceDirName": ".",
   "slug": "/health-checks",
-  "permalink": "/docs/health-checks",
+  "permalink": "/hl-docs/docs/health-checks",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docs",
   "previous": {
     "title": "Configuration (hl.yml)",
-    "permalink": "/docs/configuration"
+    "permalink": "/hl-docs/docs/configuration"
   },
   "next": {
     "title": "Accessories",
-    "permalink": "/docs/accessories"
+    "permalink": "/hl-docs/docs/accessories"
   }
 }

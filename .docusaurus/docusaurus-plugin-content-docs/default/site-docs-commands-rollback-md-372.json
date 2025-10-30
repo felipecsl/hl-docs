@@ -5,7 +5,7 @@
   "source": "@site/docs/commands/rollback.md",
   "sourceDirName": "commands",
   "slug": "/commands/rollback",
-  "permalink": "/docs/commands/rollback",
+  "permalink": "/hl-docs/docs/commands/rollback",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docs",
   "previous": {
     "title": "hl deploy",
-    "permalink": "/docs/commands/deploy"
+    "permalink": "/hl-docs/docs/commands/deploy"
   },
   "next": {
     "title": "hl secrets",
-    "permalink": "/docs/commands/secrets"
+    "permalink": "/hl-docs/docs/commands/secrets"
   }
 }

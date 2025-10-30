@@ -1,6 +1,6 @@
 {
   "type": "mdx",
-  "permalink": "/",
+  "permalink": "/hl-docs/",
   "source": "@site/src/pages/index.md",
   "title": "hl — tiny, deterministic git-push deploys",
   "description": "Tiny, deterministic “git‑push deploys” for a single host",

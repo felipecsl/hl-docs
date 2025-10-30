@@ -5,7 +5,7 @@
   "source": "@site/docs/accessories.md",
   "sourceDirName": ".",
   "slug": "/accessories",
-  "permalink": "/docs/accessories",
+  "permalink": "/hl-docs/docs/accessories",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docs",
   "previous": {
     "title": "Health Checks",
-    "permalink": "/docs/health-checks"
+    "permalink": "/hl-docs/docs/health-checks"
   },
   "next": {
     "title": "Typical Workflow",
-    "permalink": "/docs/workflow"
+    "permalink": "/hl-docs/docs/workflow"
   }
 }

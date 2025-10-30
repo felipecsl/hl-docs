@@ -5,7 +5,7 @@
   "source": "@site/docs/commands/init.md",
   "sourceDirName": "commands",
   "slug": "/commands/init",
-  "permalink": "/docs/commands/init",
+  "permalink": "/hl-docs/docs/commands/init",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docs",
   "previous": {
     "title": "Command Overview",
-    "permalink": "/docs/commands/overview"
+    "permalink": "/hl-docs/docs/commands/overview"
   },
   "next": {
     "title": "hl deploy",
-    "permalink": "/docs/commands/deploy"
+    "permalink": "/hl-docs/docs/commands/deploy"
   }
 }

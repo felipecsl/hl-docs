@@ -5,7 +5,7 @@
   "source": "@site/docs/commands/env.md",
   "sourceDirName": "commands",
   "slug": "/commands/env",
-  "permalink": "/docs/commands/env",
+  "permalink": "/hl-docs/docs/commands/env",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docs",
   "previous": {
     "title": "hl secrets",
-    "permalink": "/docs/commands/secrets"
+    "permalink": "/hl-docs/docs/commands/secrets"
   },
   "next": {
     "title": "hl accessory add postgres",
-    "permalink": "/docs/commands/accessory-postgres"
+    "permalink": "/hl-docs/docs/commands/accessory-postgres"
   }
 }

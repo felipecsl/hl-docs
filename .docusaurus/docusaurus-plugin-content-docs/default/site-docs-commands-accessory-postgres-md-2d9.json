@@ -5,7 +5,7 @@
   "source": "@site/docs/commands/accessory-postgres.md",
   "sourceDirName": "commands",
   "slug": "/commands/accessory-postgres",
-  "permalink": "/docs/commands/accessory-postgres",
+  "permalink": "/hl-docs/docs/commands/accessory-postgres",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docs",
   "previous": {
     "title": "hl env",
-    "permalink": "/docs/commands/env"
+    "permalink": "/hl-docs/docs/commands/env"
   },
   "next": {
     "title": "hl accessory add redis",
-    "permalink": "/docs/commands/accessory-redis"
+    "permalink": "/hl-docs/docs/commands/accessory-redis"
   }
 }

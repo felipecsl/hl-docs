@@ -6,8 +6,8 @@ const config: Config = {
   tagline: 'Tiny, deterministic git-push deploys for a single host',
   favicon: 'img/logo.svg',
 
-  url: 'https://felipecsl.github.io/hl-docs',
-  baseUrl: '/',
+  url: 'https://felipecsl.github.io/',
+  baseUrl: '/hl-docs',
 
   organizationName: 'felipecsl', // GitHub org/user
   projectName: 'hl',

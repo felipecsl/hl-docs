@@ -5,7 +5,7 @@
   "source": "@site/docs/getting-started.md",
   "sourceDirName": ".",
   "slug": "/getting-started",
-  "permalink": "/docs/getting-started",
+  "permalink": "/hl-docs/docs/getting-started",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docs",
   "previous": {
     "title": "hl",
-    "permalink": "/docs/intro"
+    "permalink": "/hl-docs/docs/intro"
   },
   "next": {
     "title": "How It Works",
-    "permalink": "/docs/how-it-works"
+    "permalink": "/hl-docs/docs/how-it-works"
   }
 }

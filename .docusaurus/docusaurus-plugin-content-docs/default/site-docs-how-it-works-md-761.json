@@ -5,7 +5,7 @@
   "source": "@site/docs/how-it-works.md",
   "sourceDirName": ".",
   "slug": "/how-it-works",
-  "permalink": "/docs/how-it-works",
+  "permalink": "/hl-docs/docs/how-it-works",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "docs",
   "previous": {
     "title": "Getting Started",
-    "permalink": "/docs/getting-started"
+    "permalink": "/hl-docs/docs/getting-started"
   },
   "next": {
     "title": "Configuration (hl.yml)",
-    "permalink": "/docs/configuration"
+    "permalink": "/hl-docs/docs/configuration"
   }
 }
